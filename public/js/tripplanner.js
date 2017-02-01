@@ -15,20 +15,35 @@ activities.forEach(function(activity) {
 
 var hotelButton = $selectedHotel.next();
 hotelButton.on('click', function(){
-    $('#hotel-itinerary').append("<span class='title'>" + $selectedHotel.val() + "</span>")
-    $('#hotel-itinerary').append("<button class='btn btn-xs btn-danger remove btn-circle'>x</button>");
-})
+    var hotelItineraryItem = "<div class='itinerary-item'><span class='title'>" + $selectedHotel.val() + "</span>" +
+        "<button class='btn btn-xs btn-danger remove btn-circle'>x</button></div>";
+    $('#hotel-itinerary').append(hotelItineraryItem);
+    //var hotelDeleteButton = $('#hotel-itinerary button');
+    //console.log(hotelDeleteButton);
+});
 
 var restaurantButton = $selectedRestaurant.next();
 restaurantButton.on('click', function(){
-    $('#restaurant-itinerary').append("<span class='title'>" + $selectedRestaurant.val() + "</span>")
-    $('#restaurant-itinerary').append("<button class='btn btn-xs btn-danger remove btn-circle'>x</button>");
-})
+    var restaurantItineraryItem = "<div class='itinerary-item'><span class='title'>" + $selectedRestaurant.val() + "</span>" +
+        "<button class='btn btn-xs btn-danger remove btn-circle'>x</button></div>";
+    $('#restaurant-itinerary').append(restaurantItineraryItem);
+});
 
 var activityButton = $selectedActivity.next();
 activityButton.on('click', function(){
-    $('#activity-itinerary').append("<span class='title'>" + $selectedActivity.val() + "</span>");
-    $('#activity-itinerary').append("<button class='btn btn-xs btn-danger remove btn-circle'>x</button>");
-})
+    var activityItineraryItem = "<div class='itinerary-item'><span class='title'>" + $selectedActivity.val() + "</span>" +
+        "<button class='btn btn-xs btn-danger remove btn-circle'>x</button></div>";
+    $('#activity-itinerary').append(activityItineraryItem);
+
+
+});
+
+$('#itinerary').on('click', '.remove', function () {
+  $(this).parent().remove();
+  console.log('parent of this = ', $(this).parent().remove());      
+});
+
+// var hotelDeleteButton = $('#hotel-itinerary');
+// console.log(hotelDeleteButton);
 
 
