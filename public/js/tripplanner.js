@@ -40,10 +40,15 @@ activityButton.on('click', function(){
 
 $('#itinerary').on('click', '.remove', function () {
   $(this).parent().remove();
-  console.log('parent of this = ', $(this).parent().remove());      
+  console.log('parent of this = ', $(this).parent().remove());
 });
 
 // var hotelDeleteButton = $('#hotel-itinerary');
 // console.log(hotelDeleteButton);
 
-
+$('#day-add').on('click', function(){
+    var newCurrent = $('<button class="btn btn-circle day-btn">1</button>');
+    $('.current-day').after(newCurrent);
+    $('.current-day').removeClass('current-day');
+    newCurrent.addClass('current-day');
+})
