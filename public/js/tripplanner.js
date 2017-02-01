@@ -46,9 +46,11 @@ $('#itinerary').on('click', '.remove', function () {
 // var hotelDeleteButton = $('#hotel-itinerary');
 // console.log(hotelDeleteButton);
 
+let day = 2;
 $('#day-add').on('click', function(){
-    var newCurrent = $('<button class="btn btn-circle day-btn">1</button>');
+    var newCurrent = $('<button class="btn btn-circle day-btn">'+ day +'</button>');
     $('.current-day').after(newCurrent);
+    day++;
     $('.current-day').removeClass('current-day');
     newCurrent.addClass('current-day');
 })
